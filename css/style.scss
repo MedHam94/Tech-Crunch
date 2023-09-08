@@ -1,0 +1,157 @@
+// media Query variable
+
+
+@mixin for-size($size) {
+    @if $size == tablet {
+      @media (max-width: 768px) { @content; }
+    } @else if $size == small-desktop {
+      @media (max-width: 900px) { @content; }
+    } @else if $size == desktop-up {
+      @media (max-width: 1024px) { @content; }
+    }
+  }
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after{
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+    }
+
+// base style
+a{
+    text-decoration: none;
+    color: black;
+}
+li{
+    list-style: none;
+}
+// style
+
+
+// style the nav bar
+.first{
+    nav{
+        width: 200px;
+        position: fixed;
+        display: inline-block;
+        margin: 0;
+        @include for-size(desktop-up){
+            width: 150px;
+            
+        }
+        @include for-size(tablet){
+            display: none;
+        }
+        .top{
+            padding: 25px 10px 50px;
+            h4{
+                color: orange;
+            }
+        }
+        .bot{
+            ul{
+                padding: 0 10px;
+                li{
+                    padding: 15px 0;
+                }
+            }
+        }
+    }
+    main{
+        display: inline-block;
+        margin-left: 200px;
+        display: flex;
+        @include for-size(desktop-up){
+            margin-left: 150px;
+        }
+        @include for-size(tablet){
+            margin-left: 15px;
+        }
+        .mid{
+            width: 60%;
+            a{
+                display: none;
+                @include for-size(tablet){
+                    display: block;
+                }
+            }
+            h4{
+                color: orange;
+            }
+            span{
+                display: block;
+            }
+            img{
+                max-width: 100%;
+            }
+        }
+        aside{
+            width: 40%;
+            ul{
+
+                li{
+                    border-bottom: 1px solid gray;
+                    a{
+                        h3{
+                            font-size: 27px;
+                            @include for-size(desktop-up){
+                                font-size: 24px;
+                            }
+                            @include for-size(tablet){
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}    
+.latest{
+    margin-left: 200px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid gray;
+    @include for-size(desktop-up){
+        margin-left: 150px;
+    }
+    @include for-size(tablet){
+        margin-left: 15px;
+    }
+}
+article{
+    margin-left: 200px;
+    margin-right: 10px;
+    @include for-size(desktop-up){
+        margin-left: 150px;
+    }
+    @include for-size(tablet){
+        margin-left: 15px;
+    }
+    section{
+        display: flex;
+        justify-content: space-around;
+        h2{
+            @include for-size(tablet){
+                font-size: 22px;
+            }
+            
+        }
+        img{
+            margin: 10px;
+            max-width: 100%;
+            @include for-size(tablet){
+                height: 20vw;
+            }
+        }
+    }
+}

@@ -1,0 +1,155 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+.first nav {
+  width: 200px;
+  position: fixed;
+  display: inline-block;
+  margin: 0;
+}
+@media (max-width: 1024px) {
+  .first nav {
+    width: 150px;
+  }
+}
+@media (max-width: 768px) {
+  .first nav {
+    display: none;
+  }
+}
+.first nav .top {
+  padding: 25px 10px 50px;
+}
+.first nav .top h4 {
+  color: orange;
+}
+.first nav .bot ul {
+  padding: 0 10px;
+}
+.first nav .bot ul li {
+  padding: 15px 0;
+}
+.first main {
+  display: inline-block;
+  margin-left: 200px;
+  display: flex;
+}
+@media (max-width: 1024px) {
+  .first main {
+    margin-left: 150px;
+  }
+}
+@media (max-width: 768px) {
+  .first main {
+    margin-left: 15px;
+  }
+}
+.first main .mid {
+  width: 60%;
+}
+.first main .mid a {
+  display: none;
+}
+@media (max-width: 768px) {
+  .first main .mid a {
+    display: block;
+  }
+}
+.first main .mid h4 {
+  color: orange;
+}
+.first main .mid span {
+  display: block;
+}
+.first main .mid img {
+  max-width: 100%;
+}
+.first main aside {
+  width: 40%;
+}
+.first main aside ul li {
+  border-bottom: 1px solid gray;
+}
+.first main aside ul li a h3 {
+  font-size: 27px;
+}
+@media (max-width: 1024px) {
+  .first main aside ul li a h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .first main aside ul li a h3 {
+    font-size: 22px;
+  }
+}
+
+.latest {
+  margin-left: 200px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid gray;
+}
+@media (max-width: 1024px) {
+  .latest {
+    margin-left: 150px;
+  }
+}
+@media (max-width: 768px) {
+  .latest {
+    margin-left: 15px;
+  }
+}
+
+article {
+  margin-left: 200px;
+  margin-right: 10px;
+}
+@media (max-width: 1024px) {
+  article {
+    margin-left: 150px;
+  }
+}
+@media (max-width: 768px) {
+  article {
+    margin-left: 15px;
+  }
+}
+article section {
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 768px) {
+  article section h2 {
+    font-size: 22px;
+  }
+}
+article section img {
+  margin: 10px;
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  article section img {
+    height: 20vw;
+  }
+}/*# sourceMappingURL=style.css.map */
